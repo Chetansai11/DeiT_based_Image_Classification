@@ -45,7 +45,7 @@ The model was fine-tuned to adapt the pre-trained transformer to the specific da
 
 - **Accuracy**: Achieved **76%** accuracy on the test set, surpassing the benchmark of **70%**.  
 - **Efficiency**: GPU-based training using CUDA significantly reduced training time, making the model training process faster and more scalable.  
-
+![Results on Test Data](https://github.com/Chetansai11/DeiT_based_Image_Classification/blob/main/results.png)
 ## Performance Metrics  
 
 - **Accuracy**: 76%
