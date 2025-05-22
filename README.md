@@ -1,64 +1,111 @@
-# DeiT_based_Image_Classification
-IMAGE CLASSIFICATION USING DEIT WITH TRANSFER LEARNING  
+# 🖼️ Image Classification using Data-efficient Image Transformer (DeiT)
 
-## Project Overview  
-This project focuses on implementing a **Data-efficient Image Transformer (DeiT Tiny)** for image classification of a 7-class dataset. Leveraging the power of transfer learning, pre-trained transformer blocks were adapted to enhance performance and achieve efficient multi-class classification. The model was trained and optimized using PyTorch, achieving an accuracy of **76%**, surpassing the target accuracy of **70%**.  
+This project demonstrates the implementation and fine-tuning of a **Data-efficient Image Transformer (DeiT-Tiny)** for a custom 7-class image classification task. Using **transfer learning** and **PyTorch**, the model achieves an accuracy of **76%**, exceeding the benchmark of 70%. It highlights the effectiveness of transformer-based architectures in vision tasks, even on moderately sized datasets.
 
-## Key Features  
-- **Vision Transformer (DeiT)**: Utilized pre-trained transformer blocks to perform efficient image classification.  
-- **Transfer Learning**: Pre-trained blocks were frozen, and custom layers were added to adapt the model to a specific multi-class classification task.  
-- **CUDA Acceleration**: Leveraged GPU computing for faster training and efficient handling of large datasets.  
-- **Advanced Preprocessing**: Implemented advanced image preprocessing techniques to ensure high-quality input for model training.  
+---
 
-## Dataset  
-The dataset used for this project consists of images categorized into **7 distinct classes**, specifically focusing on different types of buildings. The dataset was divided into:  
-- **Training Set**: 100% of the dataset  
-- **Validation Set**: 80% of the dataset  
-- **Test Set**: 20% of the dataset  
+## 🎯 Project Objective
 
-### Preprocessing Steps  
-- Resized all images to **224x224** to match the DeiT Tiny model input dimensions.  
-- Applied data augmentation techniques, including random rotation, horizontal flip, and normalization, to improve model generalization.  
+To build a high-performing image classification model using transformer-based deep learning techniques, particularly **DeiT**, while applying **transfer learning** and **GPU acceleration** for efficiency and scalability.
 
-## Model Architecture  
-The model is based on **DeiT**, a Vision Transformer (ViT) optimized for data efficiency. Key components include:  
-1. **Pre-trained Transformer Blocks**: Frozen to retain learned features from ImageNet.  
-2. **Custom Classifier Head**: Added to the model, including:  
-   - A fully connected layer for feature extraction.  
-   - A softmax layer for multi-class classification.  
+---
 
-The model was fine-tuned to adapt the pre-trained transformer to the specific dataset, ensuring improved performance and accuracy.  
+## 🔑 Key Features
 
-## Implementation  
+- ⚡ **DeiT Architecture**: Utilized a pre-trained **DeiT-Tiny** model with frozen transformer blocks.
+- 🔄 **Transfer Learning**: Adapted to a 7-class classification problem via a custom classifier head.
+- 🧪 **Advanced Preprocessing**: Included normalization, rotation, flipping, and resizing to 224×224.
+- 🚀 **CUDA Acceleration**: Significantly reduced training time using GPU-based computation.
+- 📈 **Surpassed Accuracy Target**: Achieved **76% accuracy**, above the 70% goal.
 
-### Training and Optimization  
-1. **Framework**: The model was implemented using PyTorch.  
-2. **Optimizer**: AdamW optimizer was used for efficient weight updates.  
-3. **Loss Function**: Cross-entropy loss was used for multi-class classification.  
-4. **Hyperparameters**:  
-   - Learning Rate: 1e-4  
-   - Batch Size: 128  
-   - Epochs: 200
-  
+---
 
-## Results  
+## 🗂️ Dataset Overview
 
-- **Accuracy**: Achieved **76%** accuracy on the test set, surpassing the benchmark of **70%**.  
-- **Efficiency**: GPU-based training using CUDA significantly reduced training time, making the model training process faster and more scalable.  
-![Results on Test Data](https://github.com/Chetansai11/DeiT_based_Image_Classification/blob/main/results.png)
-## Performance Metrics  
+- **Domain**: Architectural classification of 7 types of buildings.
+- **Structure**:
+  - `Train`: 100% of full dataset (used in training loop)
+  - `Validation`: 80% of the training set (via split)
+  - `Test`: 20% of total dataset for final evaluation
 
-- **Accuracy**: 76%
-- **Loss**: Minimal validation loss was observed during the training process, indicating strong model performance.  
-- **Generalization**: The model demonstrated high generalization capability due to robust preprocessing techniques and effective hyperparameter tuning.  
+### 🧼 Preprocessing Steps
+- Resizing to **224x224**
+- Data Augmentation:
+  - Random rotation
+  - Horizontal flipping
+  - Pixel normalization
 
-## Future Enhancements  
+---
 
-- Experiment with larger DeiT models, such as **DeiT Small** or **DeiT Base**, to achieve improved accuracy.  
-- Incorporate advanced data augmentation techniques to enhance model generalization further.  
-- Explore advanced optimization methods, such as learning rate schedulers and adaptive optimizers, to improve convergence and performance.  
+## 🧠 Model Architecture
 
-## References  
+| Component             | Description                                                  |
+|----------------------|--------------------------------------------------------------|
+| 🧩 Pre-trained DeiT   | DeiT-Tiny transformer model trained on ImageNet              |
+| 🧠 Classifier Head    | Fully connected layers + softmax for 7-class classification  |
+| ❄️ Frozen Layers      | Transformer blocks frozen to retain learned representations  |
 
-- **DeiT Paper**: [Training Data-efficient Image Transformers & Distillation through Attention](https://arxiv.org/abs/2012.12877)  
-- **PyTorch Documentation**: [https://pytorch.org/](https://pytorch.org/)  
+📘 Based on the original [DeiT Paper](https://arxiv.org/abs/2012.12877)
+
+---
+
+## ⚙️ Training & Optimization
+
+| Parameter        | Value     |
+|------------------|-----------|
+| Framework        | PyTorch   |
+| Optimizer        | AdamW     |
+| Loss Function    | Cross-Entropy |
+| Learning Rate    | 1e-4      |
+| Batch Size       | 128       |
+| Epochs           | 200       |
+
+---
+
+## 📊 Results
+
+| Metric         | Value  |
+|----------------|--------|
+| **Test Accuracy** | ✅ 76%  |
+| **Target Accuracy** | 🎯 70% |
+| **Training Speed** | ⚡ Accelerated with CUDA |
+
+![Test Accuracy Result](https://github.com/Chetansai11/DeiT_based_Image_Classification/blob/main/results.png)
+
+The model showed strong **generalization performance** and **low validation loss**, confirming the robustness of preprocessing and architectural choices.
+
+---
+
+## 🔁 Future Enhancements
+
+- 🔍 Try larger transformer variants like **DeiT-Small** or **DeiT-Base**
+- 🧪 Add AutoAugment, CutMix, or Mixup for improved generalization
+- 📉 Integrate learning rate schedulers and cyclic LR strategies
+- 🧠 Explore distillation-based training to compress larger models for deployment
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language**: Python  
+- **Frameworks**: PyTorch, Torchvision  
+- **Techniques**: Transfer Learning, Vision Transformers (ViT), DeiT  
+- **Tools**: NumPy, Matplotlib, seaborn, scikit-learn  
+- **Hardware**: CUDA-accelerated GPU (NVIDIA)
+
+---
+
+## 📚 References
+
+- [📄 DeiT: Training Data-efficient Image Transformers & Distillation through Attention](https://arxiv.org/abs/2012.12877)  
+- [🛠️ PyTorch Documentation](https://pytorch.org/)
+
+---
+
+## 📬 Contact
+
+**Chetan Sai Borra**  
+📧 sai311235@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/chetan-sai-16a252251/)
+
+> *This project highlights the power of transformer-based architectures for computer vision, combining pre-trained models and transfer learning for practical, scalable classification tasks.*
